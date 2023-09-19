@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/mp_20"
+        tools:context=".ui.SplashActivity">
+
+        <TextView
+            android:id="@+id/sp_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mp_40"
+            android:text="@string/app_name"
+            android:textColor="@color/text_000"
+            android:textSize="@dimen/text_26"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sp_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mp_40"
+            android:text="@string/splash_content"
+            android:textColor="@color/text_555"
+            android:textSize="@dimen/text_12"
+            app:layout_constraintTop_toBottomOf="@id/sp_title" />
+
+        <Button
+            android:id="@+id/sp_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mp_10"
+            android:text="@string/splash_start"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@id/sp_check"
+            app:layout_constraintLeft_toLeftOf="@id/sp_check"
+            app:layout_constraintRight_toRightOf="@id/sp_check" />
+
+        <CheckBox
+            android:id="@+id/sp_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/splash_privacy_policy"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

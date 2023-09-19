@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">InspireMe</string>
+
+    <string name="splash_title">InnerPeace</string>
+    <string name="splash_content">Find peace in the quiet moments of list.</string>
+    <string name="splash_privacy_policy">xxxxxx</string>
+    <string name="splash_start">Start</string>
+    <string name="main_title">A Thought A Day</string>
+    <string name="main_day_week">Monday</string>
+    <string name="main_day_month">3/8 2023</string>
+    <string name="main_content">"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. -Christian D. Larson"</string>
+    <string name="setting_title">Setting</string>
+    <string name="setting_user">User Proxy</string>
+    <string name="setting_privacy">Privacy</string>
+    <string name="setting_shared">Shared</string>
+</resources>

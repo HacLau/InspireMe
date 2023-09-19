@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/text_EEE"
+        android:paddingStart="@dimen/mp_20"
+        android:paddingTop="@dimen/mp_40"
+        android:paddingEnd="@dimen/mp_20"
+        android:paddingBottom="40dp"
+        tools:context=".ui.MainActivity">
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_title"
+            android:textColor="@color/text_000"
+            android:textSize="@dimen/text_26"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/main_setting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/main_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mp_30"
+            android:background="@color/text_FFF"
+            app:cardCornerRadius="@dimen/mp_15"
+            app:layout_constraintTop_toBottomOf="@id/main_title">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/main_theme_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@mipmap/ic_launcher"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/main_day_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mp_10"
+                    android:layout_marginTop="@dimen/mp_10"
+                    android:text="@string/main_day_week"
+                    app:layout_constraintLeft_toLeftOf="@id/main_theme_image"
+                    app:layout_constraintTop_toTopOf="@id/main_theme_image" />
+
+
+                <TextView
+                    android:id="@+id/main_day_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/mp_10"
+                    android:layout_marginBottom="@dimen/mp_10"
+                    android:text="@string/main_day_month"
+                    app:layout_constraintBottom_toBottomOf="@id/main_theme_image"
+                    app:layout_constraintRight_toRightOf="@id/main_theme_image" />
+
+                <TextView
+                    android:id="@+id/main_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mp_10"
+                    android:layout_marginTop="@dimen/mp_10"
+                    android:layout_marginEnd="@dimen/mp_10"
+                    android:lineHeight="@dimen/text_24"
+                    android:lines="4"
+                    android:text="@string/main_content"
+                    android:textColor="@color/text_111"
+                    android:textSize="@dimen/text_14"
+                    app:layout_constraintTop_toBottomOf="@id/main_theme_image" />
+
+                <ImageView
+                    android:id="@+id/main_shared"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/mp_40"
+                    android:layout_marginEnd="@dimen/mp_10"
+                    android:layout_marginBottom="@dimen/mp_30"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/main_content" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/main_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
