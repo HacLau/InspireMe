@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="inspire"
+            type="liushunlin.testbird.inspireme.model.InspireEntity" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/text_FFF"
+        app:cardCornerRadius="@dimen/mp_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_theme_image"
+                android:layout_width="match_parent"
+                android:layout_height="269dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/bg_splash"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_day_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mp_10"
+                android:layout_marginTop="@dimen/mp_10"
+                android:background="@drawable/bg_text_weekday"
+                android:paddingLeft="@dimen/mp_10"
+                android:paddingTop="@dimen/mp_5"
+                android:paddingRight="@dimen/mp_10"
+                android:paddingBottom="@dimen/mp_5"
+                android:text="@string/main_day_week"
+                android:textColor="@color/text_FFF"
+                android:textFontWeight="600"
+                android:textSize="@dimen/mp_18"
+                app:layout_constraintLeft_toLeftOf="@id/main_theme_image"
+                app:layout_constraintTop_toTopOf="@id/main_theme_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_content"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="@dimen/mp_10"
+                android:layout_marginTop="@dimen/mp_10"
+                android:layout_marginEnd="@dimen/mp_10"
+                android:lineHeight="@dimen/text_24"
+                android:lines="4"
+                android:text="@string/main_content"
+                android:textColor="@color/text_666"
+                android:textSize="@dimen/text_14"
+                app:layout_constraintTop_toBottomOf="@id/main_theme_image" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_shared"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_marginBottom="@dimen/mp_5"
+                android:src="@mipmap/ic_main_shared"
+                app:layout_constraintBottom_toTopOf="@id/main_day_month"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_day_month"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/mp_10"
+                android:text="@string/main_day_month"
+                android:textColor="#4d000000"
+                android:textSize="@dimen/text_12"
+                app:layout_constraintBottom_toTopOf="@id/main_tip"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <View
+                android:id="@+id/main_tip"
+                android:layout_width="140dp"
+                android:layout_height="4dp"
+                android:background="@drawable/bg_main_card_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

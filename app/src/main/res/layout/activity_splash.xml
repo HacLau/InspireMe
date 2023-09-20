@@ -9,48 +9,87 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/mp_20"
+        android:background="@mipmap/bg_splash"
+        android:paddingStart="@dimen/mp_25"
+        android:paddingEnd="@dimen/mp_25"
         tools:context=".ui.SplashActivity">
-
-        <TextView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/sp_title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/mp_40"
-            android:text="@string/app_name"
+            android:src="@mipmap/ic_splash_title"
             android:textColor="@color/text_000"
             android:textSize="@dimen/text_26"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/sp_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mp_40"
-            android:text="@string/splash_content"
-            android:textColor="@color/text_555"
-            android:textSize="@dimen/text_12"
-            app:layout_constraintTop_toBottomOf="@id/sp_title" />
-
-        <Button
-            android:id="@+id/sp_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/mp_10"
+            android:layout_marginTop="@dimen/mp_20"
+            android:text="@string/splash_content"
+            android:textColor="@color/text_FFF"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintTop_toBottomOf="@id/sp_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sp_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:text="@string/splash_start"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/sp_check"
-            app:layout_constraintLeft_toLeftOf="@id/sp_check"
-            app:layout_constraintRight_toRightOf="@id/sp_check" />
-
-        <CheckBox
-            android:id="@+id/sp_check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/splash_privacy_policy"
+            android:textSize="@dimen/text_14"
+            android:textColor="@color/text_FFF"
+            android:background="@drawable/bg_start_button"
+            android:layout_marginStart="@dimen/mp_40"
+            android:layout_marginRight="@dimen/mp_40"
+            android:layout_marginBottom="@dimen/mp_120"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sp_privacy"
+            android:layout_width="0dp"
+            android:textSize="@dimen/text_12"
+            android:layout_height="wrap_content"
+            android:text="@string/splash_privacy_policy"
+            android:layout_marginTop="@dimen/mp_25"
+            android:textColor="@color/text_888"
+            app:layout_constraintStart_toStartOf="@id/sp_start"
+            app:layout_constraintEnd_toEndOf="@id/sp_start"
+            app:layout_constraintTop_toBottomOf="@id/sp_start"/>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/sp_check"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:checked="true"
+            android:button="@null"
+            android:background="@drawable/check_bg_checked"
+            app:layout_constraintEnd_toStartOf="@id/sp_privacy"
+            app:layout_constraintTop_toTopOf="@id/sp_privacy"
+            app:layout_constraintBottom_toBottomOf="@id/sp_privacy"/>
+
+        <ProgressBar
+            android:id="@+id/sp_progress"
+            style="@style/CustomProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:orientation="horizontal"
+            android:max="100"
+            android:progress="0"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/mp_40"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

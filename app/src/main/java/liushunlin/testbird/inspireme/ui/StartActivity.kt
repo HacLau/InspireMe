@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import liushunlin.testbird.inspireme.R
 import liushunlin.testbird.inspireme.base.BaseActivity
 import liushunlin.testbird.inspireme.databinding.ActivityStartBinding
-import liushunlin.testbird.inspireme.model.StartVM
+import liushunlin.testbird.inspireme.viewmodel.StartVM
 import java.util.concurrent.TimeUnit
 private const val COUNTER_TIME_MILLIS = 5000L
 class StartActivity(
@@ -18,7 +18,7 @@ class StartActivity(
     override fun initData() {
         setStatusBarTransparent(this)
         setStatusBarLightMode(this, true)
-        viewModel = ViewModelProvider(this).get(StartVM::class.java)
+        viewModel = ViewModelProvider(this)[StartVM::class.java]
         startTimer(COUNTER_TIME_MILLIS)
     }
 

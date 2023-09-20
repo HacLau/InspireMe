@@ -4,7 +4,6 @@
 
     <string name="splash_title">InnerPeace</string>
     <string name="splash_content">Find peace in the quiet moments of list.</string>
-    <string name="splash_privacy_policy">xxxxxx</string>
     <string name="splash_start">Start</string>
     <string name="main_title">A Thought A Day</string>
     <string name="main_day_week">Monday</string>
@@ -14,4 +13,9 @@
     <string name="setting_user">User Proxy</string>
     <string name="setting_privacy">Privacy</string>
     <string name="setting_shared">Shared</string>
+    <string name="splash_privacy_policy">I have read and agreed to the \"Privacy Policy\" and \"User Agreement\"</string>
+    <string name="menu_user">User Agreement</string>
+    <string name="menu_privacy">Privacy Policy</string>
+    <string name="menu_shared">Share</string>
+
 </resources>

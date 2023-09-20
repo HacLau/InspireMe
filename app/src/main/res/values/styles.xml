@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="CustomProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
-        <item name="android:progressDrawable">@drawable/bg_progressbar</item>
+        <item name="android:progressDrawable">@drawable/bg_start_progress</item>
     </style>
 </resources>

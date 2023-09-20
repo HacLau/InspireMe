@@ -25,4 +25,9 @@
     <color name="text_222">#222222</color>
     <color name="text_111">#111111</color>
     <color name="text_000">#000000</color>
+
+    <color name="bg_333">#333333</color>
+    <color name="bg_0000">#00000000</color>
+    <color name="text_progressBar_normal">#414344</color>
+    <color name="text_progressBar_value">#FFFFFF</color>
 </resources>

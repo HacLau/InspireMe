@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -48,4 +49,10 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.tencent:mmkv:1.2.14")
+    implementation("com.blankj:utilcodex:1.31.0")
+    implementation("com.github.bumptech.glide:glide:4.8.0")
+
+
 }
