@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import liushunlin.testbird.inspireme.R
 import liushunlin.testbird.inspireme.base.BaseActivity
 import liushunlin.testbird.inspireme.databinding.ActivitySplashBinding
+import liushunlin.testbird.inspireme.databinding.ActivityWebviewBinding
 import liushunlin.testbird.inspireme.util.MMKVHelper
 import liushunlin.testbird.inspireme.util.URL_PRIVACY
 import liushunlin.testbird.inspireme.util.URL_USER_AGREEMENT
@@ -23,11 +24,17 @@ import java.util.concurrent.TimeUnit
 
 private const val COUNTER_TIME_MILLIS = 5000L
 
-class SplashActivity : BaseActivity<ActivitySplashBinding, SplashVM>() {
+class SplashActivity : BaseActivity< SplashVM>() {
     override val layoutId: Int
         get() = R.layout.activity_splash
     override val TAG: String
         get() = "SplashActivity"
+    private lateinit var binding: ActivitySplashBinding
+    override fun onCreate() {
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+
     private var millisRemaining: Long = 0L
     override fun initData() {
         setStatusBarTransparent(this)

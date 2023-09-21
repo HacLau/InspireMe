@@ -4,25 +4,24 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
+import androidx.viewbinding.ViewBinding
 import liushunlin.testbird.inspireme.ui.WebViewActivity
 
-abstract class BaseActivity<VB : ViewDataBinding, VM : ViewModel> : AppCompatActivity() {
-    protected lateinit var binding: VB
+abstract class BaseActivity<VM : ViewModel> : AppCompatActivity() {
     protected lateinit var viewModel: VM
     abstract val layoutId: Int
     abstract val TAG: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,layoutId)
+        onCreate()
         initData()
     }
+
+    abstract fun onCreate()
 
     abstract fun initData()
 

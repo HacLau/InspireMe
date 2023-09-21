@@ -1,6 +1,7 @@
 package liushunlin.testbird.inspireme.ui
 
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewbinding.ViewBinding
 import liushunlin.testbird.inspireme.R
 import liushunlin.testbird.inspireme.base.BaseActivity
 import liushunlin.testbird.inspireme.databinding.ActivityWebviewBinding
@@ -10,7 +11,13 @@ class WebViewActivity(
     override val layoutId: Int = R.layout.activity_webview,
     override val TAG: String = "WebViewActivity"
 ) :
-    BaseActivity<ActivityWebviewBinding, WebViewVM>() {
+    BaseActivity<WebViewVM>() {
+
+    private lateinit var binding: ActivityWebviewBinding
+    override fun onCreate() {
+        binding = ActivityWebviewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
 
     override fun initData() {
 

@@ -4,17 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.PagerAdapter
-import com.bumptech.glide.Glide
-import liushunlin.testbird.inspireme.R
 import liushunlin.testbird.inspireme.databinding.ItemMainPagerBinding
 import liushunlin.testbird.inspireme.model.InspireEntity
 import liushunlin.testbird.inspireme.util.getBitmapFromAssets
 import liushunlin.testbird.inspireme.util.getDayOfWeek
 import liushunlin.testbird.inspireme.util.getHistoryDay
-import liushunlin.testbird.inspireme.util.logE
-import liushunlin.testbird.inspireme.util.viewToBitmap
 import java.io.File
 
 class CardPagerAdapter(
@@ -27,7 +22,7 @@ class CardPagerAdapter(
     override fun isViewFromObject(view: View, `object`: Any): Boolean = view == `object`
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        val binding: ItemMainPagerBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.item_main_pager, container, false)
+        val binding: ItemMainPagerBinding = ItemMainPagerBinding.inflate(LayoutInflater.from(context), container, false)
         binding.mainShared.setOnClickListener {
             onclick.invoke(data[position].currentTime)
             //let view translate bitmap to shared

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import liushunlin.testbird.inspireme.R
 import liushunlin.testbird.inspireme.base.BaseActivity
 import liushunlin.testbird.inspireme.databinding.ActivityStartBinding
+import liushunlin.testbird.inspireme.databinding.ActivityWebviewBinding
 import liushunlin.testbird.inspireme.viewmodel.StartVM
 import java.util.concurrent.TimeUnit
 private const val COUNTER_TIME_MILLIS = 5000L
@@ -13,8 +14,13 @@ class StartActivity(
     override val layoutId: Int = R.layout.activity_start,
     override val TAG: String = "StartActivity"
 ) :
-    BaseActivity<ActivityStartBinding, StartVM>() {
+    BaseActivity<StartVM>() {
     private var millisRemaining :Long= 0L
+    private lateinit var binding: ActivityStartBinding
+    override fun onCreate() {
+        binding = ActivityStartBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
     override fun initData() {
         setStatusBarTransparent(this)
         setStatusBarLightMode(this, true)

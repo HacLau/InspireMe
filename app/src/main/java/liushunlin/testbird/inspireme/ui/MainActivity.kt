@@ -11,6 +11,7 @@ import liushunlin.testbird.inspireme.BuildConfig
 import liushunlin.testbird.inspireme.R
 import liushunlin.testbird.inspireme.base.BaseActivity
 import liushunlin.testbird.inspireme.databinding.ActivityMainBinding
+import liushunlin.testbird.inspireme.databinding.ActivityWebviewBinding
 import liushunlin.testbird.inspireme.model.InspireEntity
 import liushunlin.testbird.inspireme.ui.adapter.CardPagerAdapter
 import liushunlin.testbird.inspireme.ui.adapter.CardPagerTransformer
@@ -29,8 +30,13 @@ class MainActivity(
     override val layoutId: Int = R.layout.activity_main,
     override val TAG: String = "MainActivity"
 ) :
-    BaseActivity<ActivityMainBinding, MainVM>() {
+    BaseActivity< MainVM>() {
+    private lateinit var binding: ActivityMainBinding
     var dataList: MutableList<InspireEntity>? = null
+    override fun onCreate() {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
     override fun initData() {
         setStatusBarTransparent(this)
         setStatusBarLightMode(this, true)
