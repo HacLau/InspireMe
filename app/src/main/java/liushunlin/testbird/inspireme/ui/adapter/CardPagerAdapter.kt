@@ -20,7 +20,7 @@ import java.io.File
 class CardPagerAdapter(
     private val context: Context,
     private var data: List<InspireEntity>,
-    private val onclick: (String) -> Unit = {}
+    private val onclick: (Long) -> Unit = {}
 ) : PagerAdapter() {
     override fun getCount(): Int = data.size
 
@@ -29,9 +29,7 @@ class CardPagerAdapter(
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val binding: ItemMainPagerBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.item_main_pager, container, false)
         binding.mainShared.setOnClickListener {
-            val bitmapPath = viewToBitmap(context, binding.mainCardView,data[position].currentTime)
-            bitmapPath.logE()
-            onclick.invoke(bitmapPath)
+            onclick.invoke(data[position].currentTime)
             //let view translate bitmap to shared
 
         }

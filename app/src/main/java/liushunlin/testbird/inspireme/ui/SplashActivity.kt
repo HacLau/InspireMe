@@ -13,7 +13,9 @@ import androidx.lifecycle.ViewModelProvider
 import liushunlin.testbird.inspireme.R
 import liushunlin.testbird.inspireme.base.BaseActivity
 import liushunlin.testbird.inspireme.databinding.ActivitySplashBinding
-import liushunlin.testbird.inspireme.util.RepositoryUtils
+import liushunlin.testbird.inspireme.util.MMKVHelper
+import liushunlin.testbird.inspireme.util.URL_PRIVACY
+import liushunlin.testbird.inspireme.util.URL_USER_AGREEMENT
 import liushunlin.testbird.inspireme.util.logE
 import liushunlin.testbird.inspireme.util.toast
 import liushunlin.testbird.inspireme.viewmodel.SplashVM
@@ -42,15 +44,15 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashVM>() {
             } else
                 "Please check privacy".toast(this)
         }
-        "$RepositoryUtils.isFirstLaunch $RepositoryUtils.isFirstLaunchTime".logE()
-        if (RepositoryUtils.isFirstLaunch) {
-            RepositoryUtils.isFirstLaunch = false
-            RepositoryUtils.isFirstLaunchTime = System.currentTimeMillis()
+        "$MMKVHelper.isFirstLaunch $MMKVHelper.isFirstLaunchTime".logE()
+        if (MMKVHelper.isFirstLaunch) {
+            MMKVHelper.isFirstLaunch = false
+            MMKVHelper.isFirstLaunchTime = System.currentTimeMillis()
         }
         val spannableString = SpannableString("I have read and agreed to the \"Privacy Policy\" and \"User Agreement\"")
         spannableString.setSpan(object :ClickableSpan(){
             override fun onClick(widget: View) {
-                startWebViewActivity("https://www.jianshu.com/p/58c98ceefe7c")
+                startWebViewActivity(URL_PRIVACY)
             }
 
             override fun updateDrawState(ds: TextPaint) {
@@ -60,7 +62,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashVM>() {
         },30,46,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         spannableString.setSpan(object :ClickableSpan(){
             override fun onClick(widget: View) {
-                startWebViewActivity("https://www.python100.com/html/111593.html")
+                startWebViewActivity(URL_USER_AGREEMENT)
             }
 
             override fun updateDrawState(ds: TextPaint) {

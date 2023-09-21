@@ -28,8 +28,8 @@ fun getBitmapFromAssets(context: Context, fileName: String): Bitmap? {
 fun getInspireData(context: Context): MutableList<InspireEntity> {
     val currentMillis = System.currentTimeMillis()
     val currentDay = getMillisDay(currentMillis)
-    val historyDay = getMillisDay(RepositoryUtils.isFirstLaunchTime - 5 * ONE_DAY_MILLIS * 1000)
-    val passDay = if (currentDay > historyDay && TimeUtils.isLeapYear(RepositoryUtils.isFirstLaunchTime)) {
+    val historyDay = getMillisDay(MMKVHelper.isFirstLaunchTime - 2 * ONE_DAY_MILLIS * 1000)
+    val passDay = if (currentDay > historyDay && TimeUtils.isLeapYear(MMKVHelper.isFirstLaunchTime)) {
         currentDay + 366 - historyDay
     } else {
         currentDay - historyDay
@@ -38,9 +38,9 @@ fun getInspireData(context: Context): MutableList<InspireEntity> {
     val list: List<String> = Gson().fromJson(getJsonFromAssets(context, "inspire.json"), object : TypeToken<List<String>>() {}.type)
     for (index in 0 .. if (passDay > list.size) list.size - 1 else passDay) {
         val time = if (index <= passDay % list.size) {
-            RepositoryUtils.isFirstLaunchTime + ONE_DAY_MILLIS * 1000L * (index - passDay % list.size)
+            currentMillis + ONE_DAY_MILLIS * 1000L * (index - passDay % list.size)
         } else {
-            RepositoryUtils.isFirstLaunchTime + ONE_DAY_MILLIS * 1000L * (-index)
+            currentMillis + ONE_DAY_MILLIS * 1000L * (-index)
         }
         mutableList.add(
             InspireEntity(

@@ -14,9 +14,13 @@ import liushunlin.testbird.inspireme.databinding.ActivityMainBinding
 import liushunlin.testbird.inspireme.model.InspireEntity
 import liushunlin.testbird.inspireme.ui.adapter.CardPagerAdapter
 import liushunlin.testbird.inspireme.ui.adapter.CardPagerTransformer
+import liushunlin.testbird.inspireme.util.URL_PRIVACY
+import liushunlin.testbird.inspireme.util.URL_USER_AGREEMENT
 import liushunlin.testbird.inspireme.util.blurBitmap
 import liushunlin.testbird.inspireme.util.getBitmapFromAssets
 import liushunlin.testbird.inspireme.util.getInspireData
+import liushunlin.testbird.inspireme.util.logE
+import liushunlin.testbird.inspireme.util.viewToBitmap
 import liushunlin.testbird.inspireme.viewmodel.MainVM
 import java.io.File
 
@@ -40,10 +44,10 @@ class MainActivity(
         }
 
         binding.menuAgreement.setOnClickListener {
-            startWebViewActivity("https://www.jianshu.com/p/58c98ceefe7c")
+            startWebViewActivity(URL_USER_AGREEMENT)
         }
         binding.menuPrivacy.setOnClickListener {
-            startWebViewActivity("https://www.python100.com/html/111593.html")
+            startWebViewActivity(URL_PRIVACY)
         }
 
         binding.menuShare.setOnClickListener {
@@ -75,7 +79,9 @@ class MainActivity(
 
         })
         binding.mainPager.adapter = CardPagerAdapter(this, dataList!!) {
-            val uri = FileProvider.getUriForFile(this, "${packageName}.fileprovider", File(it))
+            val bitmapPath = viewToBitmap(this, binding.mainLayout,it)
+            bitmapPath.logE()
+            val uri = FileProvider.getUriForFile(this, "${packageName}.fileprovider", File(bitmapPath))
             startActivity(Intent.createChooser(Intent().apply {
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_STREAM, uri)
