@@ -1,7 +1,19 @@
+import com.github.megatronking.stringfog.plugin.StringFogExtension
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
+    id("stringfog")
+}
+apply(plugin = "stringfog")
+configure<StringFogExtension> {
+    implementation = "com.github.megatronking.stringfog.xor.StringFogImpl"
+    enable = true
+    fogPackages = arrayOf("liushunlin.testbird.inpireme")
+    kg = com.github.megatronking.stringfog.plugin.kg.RandomKeyGenerator()
+    mode = com.github.megatronking.stringfog.plugin.StringFogMode.bytes
+
 }
 
 android {
@@ -20,7 +32,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
@@ -53,6 +65,6 @@ dependencies {
     implementation("com.tencent:mmkv:1.2.14")
     implementation("com.blankj:utilcodex:1.31.0")
     implementation("com.github.bumptech.glide:glide:4.8.0")
-
+    implementation("com.github.megatronking.stringfog:xor:5.0.0")
 
 }
