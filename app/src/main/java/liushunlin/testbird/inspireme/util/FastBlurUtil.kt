@@ -14,7 +14,7 @@ object FastBlurUtil {
     var IO_BUFFER_SIZE = 2 * 1024
     fun getUrlBitmap(url: String?, scaleRatio: Int): Bitmap? {
         var scaleRatio = scaleRatio
-        val blurRadius = 8 //通常设置为8就行。
+        val blurRadius = 8
         if (scaleRatio <= 0) {
             scaleRatio = 10
         }

@@ -21,7 +21,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "liushunlin.testbird.inspireme"
+        applicationId = "liushunlin.testbird.inspiremes"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
